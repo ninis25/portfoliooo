@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Rania El Hichami</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        color: #333;
+        }
+
+        :root {
+        --main-orange: #ff6600;
+        --light-orange: #ff914d;
+        --dark-gray: #333;
+        --light-gray: #f5f5f5;
+        --white: #fff;
+        }
+
+        /* Header */
+        header {
+        background-color: var(--main-orange);
+        color: var(--white);
+        width: 100%;
+        }
+
+        .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2em;
+        display: flex;
+        align-items: center;
+        gap: 2em;
+        }
+
+        .logo {
+        width: 250px;
+        height: auto;
+        }
+
+        .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        }
+
+        .photo-rania {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-bottom: 1em;
+        }
+
+        h1 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+        }
+
+        .subtitle {
+        font-size: 1.1em;
+        margin-bottom: 1.5em;
+        }
+
+        /* Navigation */
+        nav {
+        display: flex;
+        gap: 1em;
+        flex-wrap: wrap;
+        justify-content: center;
+        }
+
+        nav a {
+        color: var(--white);
+        text-decoration: none;
+        padding: 0.8em 1.5em;
+        background-color: var(--light-orange);
+        border-radius: 5px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+        background-color: var(--main-orange);
+        }
+
+        /* Sections */
+        .section {
+        max-width: 800px;
+        margin: 2em auto;
+        padding: 3em 1em;
+        background-color: var(--white);
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        text-align: center;
+        }
+
+        .section h2 {
+        color: var(--main-orange);
+        font-size: 1.8em;
+        margin-bottom: 1em;
+        }
+
+        .section p {
+        line-height: 1.6;
+        color: var(--dark-gray);
+        margin-bottom: 1em;
+        }
+
+        /* Carousel */
+        .carousel {
+        position: relative;
+        max-width: 600px;
+        margin: 0 auto;
+        overflow: hidden;
+        }
+
+        .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+        min-width: 100%;
+        padding: 2em;
+        background-color: var(--light-gray);
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        .carousel-item img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        }
+
+        .carousel-control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        background-color: var(--main-orange);
+        color: var(--white);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+        }
+
+        .carousel-control.prev {
+        left: 10px;
+        }
+
+        .carousel-control.next {
+        right: 10px;
+        }
+
+        .carousel-control:hover {
+        background-color: var(--light-orange);
+        }
+
+        /* Footer */
+        footer {
+        background-color: var(--dark-gray);
+        color: var(--white);
+        padding: 1.5em;
+        text-align: center;
+        margin-top: 2em;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+        .header-container {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .logo {
+            width: 200px;
+        }
+        
+        nav {
+            flex-direction: column;
+        }
+        
+        nav a {
+            width: 100%;
+            text-align: center;
+        }
+        }
+
+        /* Ajouts pour le header */
+        .header-container {
+            min-height: 400px;
+            justify-content: space-between;
+        }
+
+        /* Ajustements pour la photo */
+        .photo-rania-container {
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Responsive design amélioré */
+        @media (max-width: 992px) {
+            .header-container {
+                min-height: 300px;
+                padding: 1em;
+            }
+        }
+
+        /* Transitions */
+        .nav a {
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Animations hover */
+        .logo:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        header {
+    background-color: var(--main-orange);
+    color: var(--white);
+    width: 100%;
+    position: relative;
+    padding: 0;
+}
+
+            .header-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 2em;
+            }
+
+            .logo {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                width: 200px;
+                height: auto;
+            }
+
+            .content {
+                margin: 0 auto;
+                padding-top: 40px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+</style>
+</head>
+<body>
+    <header>
+        <!-- Logo à gauche -->
+        <img src="logo.png" alt="Logo de Rania" class="logo">
+        
+        <div class="content">
+            <img src="photorania.jpg" alt="Photo de Rania El Hichami" class="photo-rania">
+            <h1>Rania El Hichami</h1>
+            <p>Étudiante en troisième année de BUT Réseaux et Télécommunications parcours Pilotage de Projets Réseaux, apprentie chez Orange</p>
+            <nav>
+                <a href="#moi">Qui suis-je</a>
+                <a href="#entreprise">Mon Entreprise</a>
+                <a href="#valeurs">Mes Valeurs</a>
+                <a href="#competences">Mes Compétences</a>
+                <a href="#projets">Projets BUT</a>
+                <a href="#cv">CV</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            
+        </div>
+    </header>
+
+    <!-- Section Moi -->
+<section id="moi" class="section">
+    <h2>Qui suis-je ?</h2>
+    <p>
+        Bonjour, je m’appelle <strong style="color: #ff6600;">Rania El Hichami</strong>, j’ai 22 ans, et je suis en 3ᵉ année de <strong style="color: #ff6600;">BUT Réseaux et Télécommunications</strong>, parcours <strong style="color: #ff6600;">Pilotage de Projet Réseaux (PILPRO)</strong>. Depuis deux ans et demi, je suis en alternance chez <strong style="color: #ff6600;">Orange</strong>, où je fais partie de l’équipe dédiée au pilotage d'<strong style="color: #ff6600;">interventions réseaux</strong> et <strong style="color: #ff6600;">infrastructures</strong>. 
+    </p>
+
+    <p>Ce qui m’a attirée vers le domaine des <strong style="color: #ff6600;">réseaux et télécommunications</strong>, c’est l’impact direct de la <strong style="color: #ff6600;">connectivité</strong> sur notre quotidien. Intégrer une entreprise pionnière comme <strong style="color: #ff6600;">Orange</strong> me permet de contribuer à des projets <strong style="color: #ff6600;">technologiques</strong> concrets, tout en renforçant mes compétences en <strong style="color: #ff6600;">gestion</strong> et <strong style="color: #ff6600;">coordination</strong>.</p>
+
+    <p>
+        J’ai également une grande passion pour le <strong style="color: #ff6600;">management</strong> et la <strong style="color: #ff6600;">gestion de projet</strong>, ce qui explique mon choix du parcours <strong style="color: #ff6600;">PILPRO</strong>. Cette spécialisation me permet d’allier mes connaissances <strong style="color: #ff6600;">techniques</strong> à ma volonté de <strong style="color: #ff6600;">coordonner</strong> et <strong style="color: #ff6600;">piloter</strong> des projets. 
+    </p>
+
+    <p>Cette année, je suis également inscrite au programme <strong style="color: #ff6600;">Les Entrep’</strong>, un dispositif <strong style="color: #ff6600;">entrepreneurial</strong> où, avec mon groupe, nous développons une plateforme visant à lutter contre l’isolement des jeunes. Notre projet a pour mission de faciliter les rencontres en proposant des <strong style="color: #ff6600;">activités variées</strong>, culturelles, sportives ou sociales, afin de rétablir l’équilibre entre interactions <strong style="color: #ff6600;">virtuelles</strong> et <strong style="color: #ff6600;">réelles</strong>.</p> 
+
+    
+    <video class="video-presentation" controls>
+        <source src="videopresentation_bfbwhPMt.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la lecture des vidéos HTML5.
+    </video>
+
+</section>
+    
+
+    <style>
+
+        .video-presentation {
+            border: 5px solid var(--main-orange); /* Couleur et épaisseur du contour */
+            border-radius: 8px; /* Arrondi des coins (facultatif) */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre pour un effet élégant */
+            width: 100%; /* Ajuste la largeur à celle du conteneur */
+            max-width: 600px; /* Limite la largeur maximale */
+            margin: 1.5em auto; /* Centrage horizontal avec espace vertical */
+            display: block; /* Centrage garanti pour la vidéo */
+        }
+        
+        </style>
+    
+</section>
+
+    <!-- Section Mon Entreprise -->
+    <section id="entreprise" class="section">
+        <h2>Mon Entreprise</h2>
+        <p>
+            Actuellement en troisième année de <strong style="color: #ff6600;">BUT Réseaux & Télécommunications</strong>, j'occupe le poste de <strong style="color: #ff6600;">Pilote d'Activité Client et Réseau</strong> chez <strong style="color: #ff6600;">Orange</strong>.
+            Dans ce rôle, je suis responsable de la gestion des <strong style="color: #ff6600;">dossiers complexes</strong> nécessitant un suivi manuel et spécialisé. Je travaille en collaboration avec les équipes en contact avec les <strong style="color: #ff6600;">clients</strong> pour
+            assurer une <strong style="color: #ff6600;">expérience client de qualité</strong>, en analysant, traitant et résolvant les <strong style="color: #ff6600;">dysfonctionnements</strong> potentiels.
+        </p>
+        <p>
+            Mon travail comprend la gestion des dossiers du début à la fin, la <strong style="color: #ff6600;">priorisation des activités</strong> pour respecter les délais de traitement, ainsi que la coordination avec différents acteurs.
+            Je contribue également à l'<strong style="color: #ff6600;">amélioration continue</strong> des processus et outils pour renforcer l'<strong style="color: #ff6600;">efficacité des opérations</strong>.
+        </p>
+        <p>
+            Dans mon poste chez <strong style="color: #ff6600;">Orange</strong>, j’ai eu l’opportunité de travailler sur le <strong style="color: #ff6600;">pilotage de nos activités</strong> pour atteindre nos <strong style="color: #ff6600;">objectifs de performance</strong>. Avec mon équipe, j’ai contribué à trouver des solutions pour optimiser nos processus et atteindre ces différents <strong style="color: #ff6600;">KPI</strong> dans nos activités principales. Grâce à ce travail, nous avons pu renforcer le suivi des <strong style="color: #ff6600;">indicateurs</strong>, et nous atteignons désormais nos objectifs plus régulièrement, ce qui montre l’efficacité de notre approche.
+            Cette expérience m’a vraiment appris à réfléchir de manière <strong style="color: #ff6600;">stratégique</strong> pour l’atteinte d’<strong style="color: #ff6600;">objectifs concrets</strong> et à collaborer avec différents départements pour améliorer notre performance globale. L’alternance, pour moi, c’est la meilleure façon d’appliquer ce qu’on apprend en cours tout en développant de vraies compétences sur le terrain.
+        </p>
+        <h3><span style="font-weight: bold; color: #ff6600;">Compétences techniques :</span></h3>
+<ul>
+    <li>Analyse et traitement des dossiers clients complexes</li>
+    <li>Suivi et résolution des problèmes réseau en transverse</li>
+    <li>Communication et reporting pour faciliter le suivi client</li>
+    <li>Mise en œuvre des procédures métier et sécurité</li>
+</ul>
+
+<br>
+
+<h3><span style="font-weight: bold; color: #ff6600;">Compétences humaines :</span></h3>
+<ul>
+    <li>Travail en équipe et collaboration interservices</li>
+    <li>Adaptabilité et gestion des priorités</li>
+    <li>Esprit d’analyse et de résolution de problèmes</li>
+    <li>Communication claire et efficace, adaptée aux différents interlocuteurs</li>
+    <li>Gestion de la relation client pour garantir une expérience positive</li>
+</ul>
+
+    </section>
+
+    <!-- Section Mes Valeurs avec le carrousel -->
+    <section id="valeurs" class="section">
+        <h2>Mes Valeurs</h2>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <!-- Diapositive 1 - Agilité -->
+                <div class="carousel-item active">
+                    <img src="agilite.png" alt="Agilité">
+                </div>
+                <!-- Diapositive 2 - Amélioration -->
+                <div class="carousel-item">
+                    <img src="amelioration.png" alt="Amélioration">
+                </div>
+                <!-- Diapositive 3 - Collaboration -->
+                <div class="carousel-item">
+                    <img src="colaboration.png" alt="Collaboration">
+                </div>
+                <!-- Diapositive 4 - Engagement Client -->
+                <div class="carousel-item">
+                    <img src="engagementclient.png" alt="Engagement Client">
+                </div>
+                <!-- Diapositive 5 - Excellence Opérationnelle -->
+                <div class="carousel-item">
+                    <img src="excellenceoperationnelle.png" alt="Excellence Opérationnelle">
+                </div>
+                 <!-- Diapositive 6 - Autonomie -->
+                 <div class="carousel-item">
+                    <img src="autonomie.png" alt="Autonomie">
+                </div>
+            </div>
+            <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+            <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Section Mes Compétences -->
+    <section id="competences" class="section">
+        <h2>Mes Compétences</h2>
+        <div class="skills">
+            <div class="skill">
+                <img src="reseau.jpg" alt="Icône Réseaux">
+                <p>Réseaux</p>
+            </div>
+            <div class="skill">
+                <img src="telecom.jpg" alt="Icône Télécommunications">
+                <p>Télécommunications</p>
+            </div>
+            <div class="skill">
+                <img src="programmer.jpg" alt="Icône Programmation">
+                <p>Programmation</p>
+            </div>
+            <div class="skill">
+                <img src="projet.jpg" alt="Icône PilPro">
+                <p>PilPro</p>
+            </div>
+        </div>
+
+        <div class="competences-details">
+            <p><strong style="font-size: 1.1em; color: #ff6600;">Réseau</strong> : Grâce à mes études en <strong>BUT Réseaux et Télécommunications</strong>, j'ai acquis une solide maîtrise des <strong>architectures réseau</strong>, des <strong>protocoles de communication</strong> et des techniques de gestion des <strong>infrastructures réseau</strong>, ce qui me permet de concevoir et d'optimiser des <strong>réseaux efficaces</strong>.</p>
+        
+            <p><strong style="font-size: 1.1em; color: #ff6600;">Télécommunication</strong> : Ma formation m'a permis d'approfondir mes connaissances sur les technologies de <strong>transmission de données</strong>, de la <strong>téléphonie mobile</strong> aux <strong>réseaux IP</strong>, me rendant capable de comprendre et de mettre en œuvre des solutions de <strong>communication modernes</strong>.</p>
+        
+            <p><strong style="font-size: 1.1em; color: #ff6600;">Programmation</strong> : Je suis capable de coder des <strong>applications simples</strong> en utilisant des langages comme <strong>Python</strong>, <strong>Java</strong> ou <strong>C++</strong>, et j'ai une compréhension de base de la <strong>programmation orientée objet</strong> et des <strong>algorithmes</strong>, ce qui me permet de développer des projets adaptés à des besoins spécifiques.</p>
+        
+            <p><strong style="font-size: 1.1em; color: #ff6600;">PilPro (Pilotage de Projets Réseaux)</strong> : Grâce à ma spécialisation en <strong>gestion de projet</strong>, j'ai appris à coordonner des <strong>équipes</strong>, à <strong>planifier des projets techniques</strong> et à suivre leur avancement, ce qui me permet de piloter efficacement des projets en <strong>réseau</strong> et <strong>télécommunication</strong>, en respectant les <strong>délais</strong> et les <strong>exigences</strong>.</p>
+        </div>
+        
+        
+        
+    </section>
+
+    <!-- Section Projets BUT -->
+<section id="projets" class="section">
+    <h2>Projets BUT</h2>
+    <p>Voici quelques exemples de projets sur lesquels j'ai travaillé dans le cadre de mon BUT Réseaux & Télécommunications :</p>
+    <ul>
+        <li>
+            <strong style="color: #ff6600;">Projet scolaire "Mesurer et caractériser un signal ou un système"</strong>: 
+            Durant ce projet, j'ai eu l'occasion de travailler sur la configuration d'un serveur <strong>FreePBX</strong> et de réaliser des tests de communication <strong>VoIP</strong> en utilisant le logiciel <strong>Linphone</strong>. J'ai mesuré différents paramètres de qualité du signal tels que la <strong>bande passante</strong>, le <strong>rapport signal sur bruit (SNR)</strong> et le <strong>spectre</strong>, tout en expérimentant l'impact de divers <strong>codecs</strong> sur la qualité audio. Ce projet m'a permis d'acquérir des compétences en configuration de systèmes <strong>VoIP</strong>, en prise de mesures techniques avec des outils comme l'<strong>oscilloscope</strong> et le <strong>GBF</strong>, ainsi qu'en analyse des performances des <strong>codecs</strong>.
+        </li>
+        <br> <!-- Saut de ligne entre les projets -->
+        <li>
+            <strong style="color: #ff6600;">Projet scolaire "Mettre en œuvre un système de transmission"</strong>: 
+            Durant ce projet, j'ai mis en œuvre un système de transmission de données en utilisant des technologies telles que le <strong>Raspberry Pi</strong>, <strong>Zigbee</strong>, <strong>PHP</strong>, <strong>MySQL</strong> et <strong>Lighttpd</strong>. J'ai configuré un <strong>réseau</strong> et un <strong>serveur web</strong>, intégré des <strong>graphiques interactifs</strong> avec <strong>Highcharts</strong>, et récupéré des données en temps réel via <strong>Zigbee</strong>. J'ai également travaillé sur la sécurisation du <strong>site web</strong>, l'ajout d'un accès <strong>Wi-Fi</strong> et l'automatisation des processus.
+        </li>
+        <br> <!-- Saut de ligne entre les projets -->
+        <li>
+            <strong style="color: #ff6600;">Projet scolaire "Développer des applications communicantes"</strong>: 
+            Lors de ce projet, j'ai créé une application client-serveur de <strong>messagerie instantanée</strong> en utilisant le langage <strong>Java</strong>. Le projet a impliqué la gestion de connexions multiples et la manipulation de données en mémoire pour permettre à plusieurs utilisateurs d’échanger des messages instantanés après avoir accepté des invitations d’amitié. J'ai utilisé le protocole <strong>UDP</strong> pour assurer une communication fluide entre le client et le serveur.
+        </li>
+        <br> <!-- Saut de ligne entre les projets -->
+        <li>
+            <strong style="color: #ff6600;">Projet scolaire "Piloter des solutions de sécurité"</strong>: 
+            Lors de ce projet, j'ai eu l'opportunité de répondre à un appel d'offre pour la première fois, ce qui m'a permis de développer des compétences pratiques dans la gestion de projets de <strong>sécurité informatique</strong>. J'ai appris à analyser les <strong>besoins d'un client</strong>, à proposer des <strong>solutions techniques adaptées</strong>, et à élaborer des documents détaillant les aspects techniques et <strong>financiers</strong> d'une offre.
+        </li>
+    </ul>
+    
+</section>
+
+
+    <!-- Section CV -->
+    <section id="cv" class="section">
+        <h2>CV</h2>
+        <p>Pour en savoir plus sur mon parcours, vous pouvez télécharger mon CV en cliquant sur le lien ci-dessous :</p>
+        <a href="CV_Rania_El_Hichami.pdf" download>Télécharger mon CV</a>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p><strong>Nom :</strong> Rania EL HICHAMI</p>
+        <p><strong>Téléphone :</strong> 0778792220</p>
+        <p><strong>Email :</strong> <a href="mailto:rania.el.hichami@gmail.com">rania.el.hichami@gmail.com</a></p>
+    </section>
+
+    <style>
+        #contact p {
+            margin: 0.5em 0;
+            font-size: 1.1em;
+            color: var(--dark-gray);
+        }
+    
+        #contact a {
+            color: var(--main-orange);
+            text-decoration: none;
+        }
+    
+        #contact a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 Rania El Hichami - Tous droits réservés</p>
+        <div class="social-links">
+            <a href="mailto:rania.el.hichami@gmail.com" title="Email">
+                
+            </a>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background-color: #ff6600; /* Couleur orange */
+        color: #fff; /* Texte blanc */
+        padding: 20px 0;
+        text-align: center;
+        font-size: 1em;
+        margin-top: 20px;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .footer-content p {
+        margin: 10px 0;
+    }
+
+    .social-links {
+        margin-top: 15px;
+    }
+
+    .social-links a {
+        margin: 0 10px;
+        display: inline-block;
+    }
+
+    .social-links img {
+        width: 30px; /* Taille des icônes */
+        height: 30px;
+        transition: transform 0.3s ease;
+    }
+
+    .social-links a:hover img {
+        transform: scale(1.2); /* Effet de zoom au survol */
+    }
+
+    .social-links a:focus img {
+        outline: 2px solid #fff; /* Contour blanc au focus */
+    }
+</style>
+
+
+    <script>
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const items = document.querySelectorAll('.carousel-item');
+            if (index >= items.length) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = items.length - 1;
+            } else {
+                currentIndex = index;
+            }
+            const carouselInner = document.querySelector('.carousel-inner');
+            carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+    </script>
+
+   
+
+</body>
+</html>
+
+<style>
+    .video-presentation {
+        border: 5px solid var(--main-orange); /* Couleur et épaisseur du contour */
+        border-radius: 8px; /* Arrondi des coins (facultatif) */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre pour un effet élégant */
+        width: 100%; /* Ajuste la largeur à celle du conteneur */
+        max-width: 600px; /* Limite la largeur maximale */
+        margin: 1.5em auto; /* Centrage horizontal avec espace vertical */
+        display: block; /* Centrage garanti pour la vidéo */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition douce */
+        animation: fadeIn 0.6s ease-out; /* Animation au chargement */
+    }
+    
+    /* Effet de survol */
+    .video-presentation:hover {
+        transform: scale(1.05); /* Zoom léger au survol */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 15px var(--main-orange); /* Glow orange */
+    }
+    
+    /* Effet au clic */
+    .video-presentation:active {
+        transform: scale(0.98); /* Réduction légère */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombre réduite */
+    }
+    
+    /* Animation de pulsation douce */
+    @keyframes pulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.02);
+        }
+    }
+    .video-presentation {
+        animation: pulse 3s infinite; /* Pulsation douce */
+    }
+    
+    /* Animation d'apparition */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Conteneur avec dégradé */
+    .video-presentation-container {
+        background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Dégradé dynamique */
+        padding: 10px;
+        border-radius: 12px; /* Arrondi pour correspondre à la vidéo */
+        display: inline-block;
+    }
+    
+    /* Responsivité */
+    @media (max-width: 768px) {
+        .video-presentation {
+            max-width: 100%; /* S'adapte aux petits écrans */
+            margin: 1em auto;
+        }
+    }
+    </style>
+    
